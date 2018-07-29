@@ -1,5 +1,11 @@
 ---
 
+- hosts: webservers
+  gather_facts: false
+  tasks:
+    - raw: which python || apt-get update
+    - raw: (which python && which aptitude) || apt-get install -y python python-apt aptitude
+
 - name: install and configure webservers
   hosts: webservers
   remote_user: root
