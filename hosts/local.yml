@@ -1,0 +1,4 @@
+[webservers]
+;localhost
+test_sshd ansible_connection=docker
+
